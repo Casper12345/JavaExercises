@@ -8,41 +8,29 @@ public class Patient{
 	private Patient nextPatient;
 	
 	Patient(String name, int age, String illness){
-
 		this.name = name;
 		this.age = age;
 		this.illness = illness;
-		this.nextPatient = null;		
-	
 	}
 	
 	public String getName(){
-		
 		return name;
 	}
 	
 	public int getAge(){
-	
-		return age; 
-	
+		return age;
 	}
 	
 	public String getIllness(){
-		
-		return illness; 
-	
+		return illness;
 	}
 	
 	public Patient getNextPatient(){
-	
 		return nextPatient;
-	
 	}
 	
 	public void setNextPatient(Patient nextPatient){
-		
 		this.nextPatient = nextPatient;
-	
 	}  
 
 

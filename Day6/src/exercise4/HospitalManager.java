@@ -3,99 +3,125 @@ package exercise4;
 public class HospitalManager{
 
 	private Patient header;
+	private Patient tail;
 
 	public static void main (String[] args){
 		
 		HospitalManager myManager = new HospitalManager();
+		Patient firstPatient = new Patient("joe", 23, "sick");
 
-		Patient firstPatient = new Patient("Per",12,"TB");
 		myManager.addPatient(firstPatient);
-        Patient secondPatient = new Patient("Dadel",13,"OK");
-        myManager.addPatient(secondPatient);
 
-		//myManager.printPatients();
+		Patient secondPatient = new Patient("anker", 34, "fucked");
+		myManager.addPatient(secondPatient);
+
+
+		Patient thirdPatient = new Patient("Poul", 26, "more fucked");
+		myManager.addPatient(thirdPatient);
+
+        //myManager.printer();
+
+        myManager.remove(secondPatient);
+
+        myManager.printer();
+
 
 
 
 	}
 
 	private void addPatient(Patient newPatient){
-		
-		Patient pointer = header;
 
-		if(header == null){
+	    Patient pointer = header;
 
-		    header = newPatient;
+	    if(header == null){
+            header = newPatient;
+            newPatient.setNextPatient(header);
 
-		} else {
+	    }else{
 
-            while (!pointer.equals(header)) {
-                pointer = pointer.getNextPatient();
+	        while(!pointer.getNextPatient().equals(header)){
+	            pointer = pointer.getNextPatient();
             }
 
             pointer.setNextPatient(newPatient);
-            pointer.getNextPatient().setNextPatient(header);
+            newPatient.setNextPatient(header);
+            tail = newPatient;
         }
 
-	}
 
-    private boolean deletePatient(Patient delete){
 
-        Patient pointer = header;
-
-        if(pointer == null) {
-
-            System.out.println("List is empty");
-            return false;
-        }
-
-        if (delete.equals(pointer) && pointer.getNextPatient() == header){
-            header.setNextPatient(null);
-            return true;
-        }
-
-        if(delete.equals(pointer) && pointer.getNextPatient() != header) {
-            while(!pointer.getNextPatient().equals(delete)){
-                pointer = pointer.getNextPatient();
-            }
-
-            pointer.setNextPatient(pointer.getNextPatient().getNextPatient());
-            return true;
-        }else{
-            return false;
-        }
     }
 
-	private void printPatients(){
+    private void printer(){
 
-        Patient pointer = header;
+	    Patient pointer = header;
 
-        if(pointer == null){
-
-            System.out.println("List is empty");
-            return;
-
+	    if(header == null){
+            System.out.println("list is empty");
         }
 
         if(pointer.getNextPatient().equals(header)){
+            System.out.println("Name: " + pointer.getName());
+            System.out.println("Age: " + pointer.getAge());
+            System.out.println("Illness: " + pointer.getIllness());
+
+        }else{
 
             System.out.println("Name: " + pointer.getName());
             System.out.println("Age: " + pointer.getAge());
             System.out.println("Illness: " + pointer.getIllness());
 
-        } else {
-
             while(!pointer.getNextPatient().equals(header)){
 
                 pointer = pointer.getNextPatient();
-
                 System.out.println("Name: " + pointer.getName());
                 System.out.println("Age: " + pointer.getAge());
                 System.out.println("Illness: " + pointer.getIllness());
+
             }
 
-
         }
+
     }
+
+    private boolean remove(Patient toRemove){
+
+        Patient pointer = header;
+
+        if(header == null){
+            System.out.println("List is empty");
+            return false;
+        }
+
+        if(toRemove.equals(header)){
+            header = pointer.getNextPatient();
+            tail.setNextPatient(header);
+            return true;
+        }
+
+        if(toRemove.equals(tail)){
+            while (!pointer.getNextPatient().equals(tail)){
+                pointer = pointer.getNextPatient();
+            }
+            pointer.setNextPatient(header);
+            tail = pointer;
+            return true;
+        }
+
+        while (!pointer.getNextPatient().equals(toRemove)){
+            pointer = pointer.getNextPatient();
+
+            if(pointer.getNextPatient().equals(header)){
+                return false;
+            }
+        }
+
+        pointer.setNextPatient(pointer.getNextPatient().getNextPatient());
+        return true;
+
+    }
+
+
 }
 	

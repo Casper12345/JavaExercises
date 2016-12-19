@@ -15,7 +15,7 @@ public class Employees {
 
         for(int i = 0; i < copyingArray.length; i++){
 
-            copyingArray[i] = employeeName[0];
+            //copyingArray[i] = employeeName[0];
 
 
         }

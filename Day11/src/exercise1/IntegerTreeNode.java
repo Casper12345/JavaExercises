@@ -5,10 +5,12 @@ public class IntegerTreeNode{
 	private int value; 
 	private IntegerTreeNode left; 
 	private IntegerTreeNode right;
-	
+	private static StringBuilder returnString = new StringBuilder();
+
 
 	public IntegerTreeNode(int value) {
-		this.value = value;
+
+	    this.value = value;
 	}
 
     public void add(int newNumber){
@@ -62,9 +64,6 @@ public class IntegerTreeNode{
         }
     }
 
-    public void printer(){
-
-    }
 
     public int getMax(){
         if (right == null){
@@ -81,16 +80,50 @@ public class IntegerTreeNode{
             return left.getMin();
         }
     }
-
+    @Override
     public String toString(){
-        StringBuilder returnString = new StringBuilder();
-        returnString.append('[');
-        if(right == null && left == null){
-            returnString.append(value);
-        }else {
 
+        returnString.append("[");
+        toStringLeft();
+        toStringRight();
+
+        returnString.append("]");
+        return returnString.toString();
+    }
+
+    private void toStringRight(){
+        if (right == null) {
+            returnString.append(value);
+
+        } else {
+            returnString.append(value);
+            right.toStringRight();
         }
-        returnString.append(']');
+    }
+
+    private void toStringLeft(){
+        if (left == null) {
+            returnString.append(value);
+
+        } else {
+            returnString.append(value);
+            left.toStringLeft();
+        }
+    }
+
+    public void recurse() {
+        if (left != null){
+            left.recurse();
+        }
+        System.out.println(value);
+        if (right != null) {
+            right.recurse();
+        }
+    }
+
+
+
+    public String getReturnString() {
         return returnString.toString();
     }
 }

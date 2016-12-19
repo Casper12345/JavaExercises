@@ -1,12 +1,11 @@
 package exercise5;
 
-public class GenericStack<T> {
+public class GenericStack<E> {
 
-    private T[] stack;
+    private E stack[];
 
     public GenericStack(){
-
-        stack = (T[]) new Integer[0] ;
+        this.stack = new E[0];
 
     }
 
