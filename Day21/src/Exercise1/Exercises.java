@@ -275,7 +275,7 @@ public class Exercises {
     public void mapLengthToWordList() throws IOException {
         Map<Integer, List<String>> map = null; /* TODO */
         (reader.lines().flatMap(line -> Stream.of(line.split(REGEXP)))
-                .filter(words -> words.length() > 0).collect(Collectors.toMap(Choice::toString)));
+                .filter(words -> words.length() > 0).collect(Collectors.toMap(a-> a.toString())));
 
         assertEquals(6, map.get(7).size());
         assertEquals(Arrays.asList("increase", "ornament"), map.get(8));

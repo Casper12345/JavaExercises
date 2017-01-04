@@ -73,6 +73,8 @@ public class SortedLinkedList {
             header = toAdd;
             header.setNextNode(pointer);
 
+
+
         }
 
     }
