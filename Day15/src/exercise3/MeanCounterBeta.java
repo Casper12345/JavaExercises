@@ -17,9 +17,10 @@ public class MeanCounterBeta {
 		
 		int userLength = 0;
 		
-		List<Integer> userInput = new ArrayList<Integer>();
+		List<Integer> userInput = new ArrayList<>();
 		
 		while(userLength == 0){
+
 			try{
 				System.out.print("Enter amount of numbers that you want to enter: ");
 				userLength = Integer.parseInt(System.console().readLine()); 

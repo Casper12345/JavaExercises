@@ -1,6 +1,8 @@
 package exercise1;
 
 import java.io.File;
+import java.util.Arrays;
+
 public class Filenames {
 		
 		public static void main(String[] args){
@@ -18,8 +20,8 @@ public class Filenames {
 			File fileHandle = new File(".");
 		
 			String[] importList = fileHandle.list();
-			
-			System.out.println(importList[0]);
+
+			Arrays.stream(importList).forEach(System.out::println);
 		
 		
 		

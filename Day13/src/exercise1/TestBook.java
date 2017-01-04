@@ -4,6 +4,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class TestBook {
+
 	Book myBook;
 	
     @Before public void initialize() {
@@ -19,6 +20,7 @@ public class TestBook {
 	public void testBookTitle() {		
 		assertEquals("Tale of two cities" , myBook.getTitle());
 	}
+
 	
 	
 }

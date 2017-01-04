@@ -1,13 +1,17 @@
 package exercise5;
 
+import java.util.Stack;
+
 public class GenericStack<E> {
 
-    private E stack[];
+    private Stack<Integer> intStack;
+    private Stack<Double> stack;
 
     public GenericStack(){
-        this.stack = new E[0];
-
+        this.intStack = new Stack<>();
     }
+
+
 
 
 

@@ -5,15 +5,16 @@ public class UserImpl implements User{
 	
 	
 	public UserImpl(String name){
+
 		this.name = name;
 	}
 	
 	public String getName() {
-		return name;
+	    return name;
 	}
 	
 	public int register(Library library){
-		return (library.registerUser(this));
+	    return (library.registerUser(this));
 	}
 	
 	

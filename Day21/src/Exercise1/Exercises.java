@@ -12,6 +12,7 @@ package Exercise1;
         import org.junit.Ignore;
         import org.junit.Test;
 
+        import java.awt.*;
         import java.io.BufferedReader;
         import java.io.IOException;
         import java.nio.charset.StandardCharsets;
@@ -55,7 +56,6 @@ public class Exercises {
     // Exercise 1: Print out all the words in wordList, which is a static List<String> .
 
     @Test
-    //@Ignore
     public void printAllWords() {
         /* TODO */
 
@@ -272,9 +272,10 @@ public class Exercises {
 
 
     @Test
-    @Ignore
     public void mapLengthToWordList() throws IOException {
         Map<Integer, List<String>> map = null; /* TODO */
+        (reader.lines().flatMap(line -> Stream.of(line.split(REGEXP)))
+                .filter(words -> words.length() > 0).collect(Collectors.toMap(Choice::toString)));
 
         assertEquals(6, map.get(7).size());
         assertEquals(Arrays.asList("increase", "ornament"), map.get(8));

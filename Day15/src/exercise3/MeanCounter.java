@@ -6,30 +6,25 @@ public class MeanCounter {
 	
 	
 	public static void main(String[] args){
-		
-		
+
 		MeanCounter m = new MeanCounter();
-		
 		m.meanPrinter();
-		
-		
-		
 	}
 	
 	
 	public void meanPrinter(){
 		
-		List<Integer> userInput = new ArrayList<Integer>();
+		List<Integer> userInput = new ArrayList<>();
 		
-		for(int i = 1; i < 11; i++){
-				
-			try {
+		for(int i = 0; i < 10; i++){
+            Scanner s = new Scanner(System.in);
+
+            try {
 				System.out.print("Input number: ");
-				userInput.add(Integer.parseInt(System.console().readLine()));
+				userInput.add(s.nextInt());
 				
-			}catch (NumberFormatException ex){
-			
-					System.out.println("pls input a number");
+			}catch (InputMismatchException ex){
+                System.out.println("Pls input a number");
 			} 
 				
 		}	
@@ -45,9 +40,7 @@ public class MeanCounter {
 		}
 			
 		System.out.println(inputAdded/userInput.size());
-		
-			
-		
+
 		
 	}
 	

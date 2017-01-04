@@ -16,7 +16,7 @@ while (true){
 			
 			primeNumber= false;	
 		
-		};
+		}
 		
 			i++
 	

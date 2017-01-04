@@ -16,7 +16,7 @@ public class Launcher {
 	
 	public void launch(int newElement) {
 		
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<>();
 	
 		try {
 				

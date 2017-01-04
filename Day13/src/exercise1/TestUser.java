@@ -6,10 +6,12 @@ import static org.junit.Assert.*;
 public class TestUser {
 
 	private User myUser;
+	private User mySecondUser;
 	
     @Before public void initialize() {
 	
 		myUser = new UserImpl("Casper");
+		mySecondUser = new UserImpl("Enric");
 
     }
 	
@@ -17,15 +19,19 @@ public class TestUser {
 	@Test 
 	public void testUserName() {		
 		assertEquals("Casper" , myUser.getName());
+		assertEquals("Enric", mySecondUser.getName());
 	}
+
 	
 	
 	@Test
+	//@Ignore
 	public void testRegiserLibrary(){
 		
 		Library myLibrary = new MockLibrary();
 		
-		assertEquals(21, myUser.register(myLibrary));
+		assertEquals(1, myUser.register(myLibrary));
+		assertEquals(2, myUser.register(myLibrary));
 
 		
 	}
