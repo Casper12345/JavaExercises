@@ -1,14 +1,14 @@
 // creating classes 
 
 
-class Point {
+class Point2 {
 	double x;
 	double y;
 	
 }
 
 
-class Rectangle { 
+class Rectangle2 {
   Point upLeft; 
   Point downRight;
 	
