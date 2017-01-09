@@ -8,19 +8,16 @@ public class ExerciseSix {
     public static void main(String[] args) {
 
         ExerciseSix e = new ExerciseSix();
-        System.out.println(e.greatestCommonDivisor(30,6));
+        System.out.println(e.greatestCommonDivisor(15,12));
 
     }
 
     private int greatestCommonDivisor(int p, int q){
 
-        if (p>q){
-            return greatestCommonDivisor(q, p%q);
-        } else{
-            return p/q;
+        if(p == 0 || q == 0){
+            return p+q;
         }
+        return greatestCommonDivisor(q, p%q);
 
-
-        //if p > q, then gcd(p,q) = gcd(q,p mod q)
     }
 }

@@ -1,15 +1,12 @@
 package exercise1;
 
-public class Exercise{
+public class ExerciseA {
 	
 	public static void main(String[] args){
 		
-		Exercise e = new Exercise();
+		ExerciseA e = new ExerciseA();
 		
 		e.printNumbers(6);
-		
-		
-		
 		
 	}
 	

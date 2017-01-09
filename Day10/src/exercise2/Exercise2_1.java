@@ -1,6 +1,6 @@
 package exercise2;
 
-public class Exercise{
+public class Exercise2_1 {
 	
 	public static void main(String[] args){
 		
@@ -23,8 +23,7 @@ public class Exercise{
 		
 		}
 	}
-	
-	
+
 	// n! = 4 * (4 − 1) * (4 − 2) * (4 − 3) * (4 − 4) 
 
 	public static int factorialRecursive(int n){

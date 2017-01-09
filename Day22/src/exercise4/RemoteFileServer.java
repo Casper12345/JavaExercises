@@ -20,7 +20,7 @@ public class RemoteFileServer extends UnicastRemoteObject implements RemoteFileS
     @Override
     public String getRemoteFile(String filePath){
 
-        File fileHandler = new File("./" + filePath);
+        File fileHandler = new File("");
 
         StringBuilder stringToReturn = new StringBuilder();
 
@@ -36,8 +36,6 @@ public class RemoteFileServer extends UnicastRemoteObject implements RemoteFileS
                 while ((line = in.readLine()) != null) {
                     return stringToReturn.toString();
                 }
-
-            }
 
             } catch (FileNotFoundException ex) {
                  return "File not found";

@@ -1,17 +1,26 @@
 package exercise5;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
-public class GenericStack<E> {
+public class GenericStack<E extends Number> {
 
-    private Stack<Integer> intStack;
-    private Stack<Double> stack;
+    private List<E> genericStack = new ArrayList<>();
 
-    public GenericStack(){
-        this.intStack = new Stack<>();
+
+    public boolean isEmpty(){
+        return genericStack.isEmpty();
     }
 
+    public void push(E toPush){
 
+        genericStack.add(toPush);
+    }
+
+    public E pop(){
+
+        return genericStack.get(genericStack.size() - 1);
+    }
 
 
 

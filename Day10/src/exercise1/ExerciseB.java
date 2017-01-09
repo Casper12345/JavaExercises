@@ -1,10 +1,10 @@
 package exercise1;
 
-public class ExerciseTwo{
+public class ExerciseB {
 	
 	public static void main(String[] args){
 		
-		ExerciseTwo e = new ExerciseTwo();
+		ExerciseB e = new ExerciseB();
 		
 		System.out.println(e.buggyMethod(8));
 		

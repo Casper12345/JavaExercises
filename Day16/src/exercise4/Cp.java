@@ -22,11 +22,21 @@ public class Cp {
 			
 			if (file2.exists()) {
 				System.out.println("File already exists with " + name2 +  
-				". Would you like to overwrite it? Y/N");
+				" Would you like to overwrite it? Y/N");
 				String input = System.console().readLine();
 				if (input.equals("Y")) {
-					
 					System.out.println("Overwriting file...");
+					try{
+					    BufferedWriter writer = new BufferedWriter(new FileWriter(file2));
+					    BufferedReader reader = new BufferedReader(new FileReader(file1));
+					    String line;
+					    while ((line = reader.readLine()) != null) {
+					            writer.write(line);
+					    }
+
+                    }catch (IOException ex){
+                    ex.printStackTrace();
+                    }
 				
 				} else if (input.equals("N")) {
 					System.out.println("Process Terminated.");
