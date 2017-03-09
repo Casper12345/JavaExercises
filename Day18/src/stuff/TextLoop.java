@@ -1,6 +1,6 @@
 package stuff;
 import java.util.concurrent.Executor;
-import exercise3.ExecutorImpl;
+import exercise3_1.ExecutorImpl;
 
 public class TextLoop implements Runnable {
 

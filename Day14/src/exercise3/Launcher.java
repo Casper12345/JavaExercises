@@ -8,8 +8,7 @@ public class Launcher {
 		
 		HailStone h = new HailStone();
 		h.hail(12);
-		System.out.println(h.getList().listIterator().get());
-	
+		System.out.println(h.getList());
 	
 	}
 

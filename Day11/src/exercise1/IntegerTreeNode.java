@@ -8,6 +8,7 @@ public class IntegerTreeNode{
 	private static StringBuilder returnString = new StringBuilder();
 
 
+
 	public IntegerTreeNode(int value) {
 
 	    this.value = value;
@@ -35,7 +36,7 @@ public class IntegerTreeNode{
         }
     }
 
-    public boolean contains (int n){
+    public boolean contains(int n){
 
         if (n == this.value) {
 
@@ -81,49 +82,53 @@ public class IntegerTreeNode{
         }
     }
     @Override
-    public String toString(){
+    public String toString() {
+        returnString.append('[');
+        recurse();
+        returnString.append(']');
 
-        returnString.append("[");
-        toStringLeft();
-        toStringRight();
-
-        returnString.append("]");
         return returnString.toString();
     }
 
-    private void toStringRight(){
-        if (right == null) {
-            returnString.append(value);
-
-        } else {
-            returnString.append(value);
-            right.toStringRight();
-        }
-    }
-
-    private void toStringLeft(){
-        if (left == null) {
-            returnString.append(value);
-
-        } else {
-            returnString.append(value);
-            left.toStringLeft();
-        }
-    }
-
-    public void recurse() {
+    private void recurse(){
+        returnString.append(value);
         if (left != null){
+            returnString.append("[");
             left.recurse();
+            returnString.append(']');
+
         }
-        System.out.println(value);
+
         if (right != null) {
+            returnString.append("[");
             right.recurse();
+            returnString.append(']');
         }
     }
 
 
-
-    public String getReturnString() {
-        return returnString.toString();
+    public int depth(){
+        return depthRecurse(this);
     }
+
+
+    private int counter, depth;
+
+    private int depthRecurse(IntegerTreeNode n) {
+        if (n != null) {
+            counter++;
+
+            if (counter > depth) {
+                depth = counter;
+            }
+
+            depthRecurse(n.left);
+            depthRecurse(n.right);
+
+            counter--;
+        }
+        return depth;
+    }
+
+
 }

@@ -12,21 +12,41 @@ public class TreeLauncher{
 	
 	public void Launcher(){
 		
-		IntegerTreeNode newTree = new IntegerTreeNode(8);
-		newTree.add(1);
-		newTree.add(3);
-		newTree.add(2);
-		newTree.add(0);
+		IntegerTreeNode newTree = new IntegerTreeNode(6);
 		newTree.add(5);
-		newTree.add(7);
-		newTree.add(6);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		newTree.add(5);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		newTree.add(5);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		newTree.add(5);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		newTree.add(5);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		newTree.add(5);
+		newTree.add(9);
+		newTree.add(3);
+		newTree.add(8);
+		newTree.add(11);
+		System.out.println(newTree.toString());
 
-		//System.out.println(newTree.contains(1));
-        //System.out.println(newTree.getMax());
-        //System.out.println(newTree.getMin());
-        //newTree.recurse();
-        System.out.println(newTree.toString());
-        //System.out.println(newTree.getReturnString());
+		System.out.println(newTree.depth());
+
 
 
 	}

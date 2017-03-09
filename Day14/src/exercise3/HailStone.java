@@ -7,27 +7,23 @@ public class HailStone{
 	private ArrayList<Integer> listToReturn = new ArrayList<>();
 	
 	public ArrayList<Integer> getList(){
-		
 		return listToReturn;
-		
 	}
 	
-	public int hail(int n){  
-		listToReturn.add(n);
+	public int hail(int n){
+	    listToReturn.add(n);
+
 		if(n == 1){
-			
 			return 1;
 		}
 		
 		if(n%2 == 0){
 			int aux = n/2;
-			
 			return hail(aux);
 		
 		}else{
 			
 			int aux2 = 3*n+1;
-			
 			return hail(aux2);
 		}
 		
