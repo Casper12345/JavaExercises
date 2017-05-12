@@ -1,4 +1,4 @@
-package exercise2_2;
+package exercise2;
 
 /**
 * Map from integer to Strings

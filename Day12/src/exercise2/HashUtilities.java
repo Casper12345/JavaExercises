@@ -1,4 +1,4 @@
-package exercise2_2;
+package exercise2;
 
 class HashUtilities{
 	
@@ -10,15 +10,5 @@ class HashUtilities{
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

@@ -1,11 +1,11 @@
-package exercise2_2;
+package exercise2;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 public class ShortHashTest {
 	
-	
+
 	@Test
 	public void testsMethod() {
 		

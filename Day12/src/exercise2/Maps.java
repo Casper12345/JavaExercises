@@ -1,4 +1,5 @@
-package exercise2_2;
+package exercise2;
+
 
 public class Maps implements SimpleMap{
 	
@@ -18,11 +19,10 @@ public class Maps implements SimpleMap{
 		}
 	}	
 
-	
+	@SuppressWarnings("Duplicates")
 	public void put(int key, String name){
 		
 		if(size == map.length){
-			
 			System.out.println("Map is full");
 			return;	
 		}	
